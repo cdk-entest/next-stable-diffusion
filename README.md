@@ -7,9 +7,9 @@ publishedDate: 30/10/2023
 
 ## Introduction
 
-[GitHub](https://github.com/cdk-entest/next-stable-diffusion/tree/main) this note shows how to build a simple image generating app with nextjs and stable diffusion hosted on Amazon SageMaker.
-
 <img src="./assets/arch.png">
+
+[GitHub](https://github.com/cdk-entest/next-stable-diffusion/tree/main) this note shows how to build a simple image generating app with nextjs and stable diffusion hosted on Amazon SageMaker.
 
 ## Lambda Function
 
