@@ -10,14 +10,14 @@ const HomePage = () => {
   const [counter, setCounter] = useState<Number>(25);
 
   const generateImage = async (prompt: string) => {
-    const token = localStorage.getItem("IdToken");
+    // const token = localStorage.getItem("IdToken");
 
     try {
       const { data, status } = await axios.get(config.API_DIFFUSION, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
+        // headers: {
+        //   Authorization: `Bearer ${token}`,
+        //   "Content-Type": "application/json",
+        // },
         params: {
           prompt: prompt,
         },
