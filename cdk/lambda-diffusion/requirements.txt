@@ -1,0 +1,2 @@
+sagemaker
+stability-sdk[sagemaker] @ git+https://github.com/Stability-AI/stability-sdk.git@sagemaker
