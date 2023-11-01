@@ -9,7 +9,7 @@ const HomePage = () => {
   const [modal, setModal] = useState<Boolean>(false);
   const [counter, setCounter] = useState<Number>(25);
 
-  const generateImage = async (prompt: string) => {
+  const generateImage = async (prompt: string, style: string) => {
     // const token = localStorage.getItem("IdToken");
 
     try {
@@ -20,6 +20,7 @@ const HomePage = () => {
         // },
         params: {
           prompt: prompt,
+          style: style,
         },
       });
 
@@ -60,8 +61,23 @@ const HomePage = () => {
             name="prompt"
             rows={2}
             placeholder="describe an image you want..."
-            className="p-2.5 w-full text-gray-900 bg-slate-200  rounded-lg border border-gray-300 focus:border-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 my-5 outline-none focus:outline-none"
+            className="p-2.5 w-full text-gray-900 bg-slate-200  rounded-lg border border-gray-300 focus:border-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 my-1 outline-none focus:outline-none"
           ></textarea>
+          <select
+            id="style"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none focus:outline-none focus:border-2 mb-3"
+          >
+            <option value="anime" selected>
+              anime
+            </option>
+            <option value="origami">origami</option>
+            <option value="comic-book">comic-book</option>
+            <option value="fantasy-art">fantasy-art</option>
+            <option value="digital-art">digital-art</option>
+            <option value="tile-texture">tile-texture</option>
+            <option value="pixel-art">pixel-art</option>
+            <option value="cinematic">cinematic</option>
+          </select>
           <button
             className="bg-orange-400 px-10 py-3 rounded-sm"
             onClick={async () => {
@@ -69,15 +85,23 @@ const HomePage = () => {
                 document.getElementById("prompt") as HTMLInputElement
               ).value;
 
+              let style = (document.getElementById("style") as HTMLInputElement)
+                .value;
+
               if (prompt === "") {
                 prompt = "a big house";
+              }
+
+              if (style === "") {
+                style = "anime";
               }
 
               setUrl(null);
               setCounter(25);
               setModal(true);
               timer();
-              await generateImage(prompt);
+              await generateImage(prompt, style);
+              // console.log(style);
             }}
           >
             Submit
