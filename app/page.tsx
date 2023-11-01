@@ -61,11 +61,13 @@ const HomePage = () => {
             name="prompt"
             rows={2}
             placeholder="describe an image you want..."
-            className="p-2.5 w-full text-gray-900 bg-slate-200  rounded-lg border border-gray-300 focus:border-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 my-1 outline-none focus:outline-none"
+            className="p-2.5 w-full text-gray-900 bg-slate-200  rounded-lg border border-gray-300 focus:border-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+            outline-none focus:outline-none"
           ></textarea>
           <select
             id="style"
-            className="p-2.5 w-full text-gray-900 bg-slate-200  rounded-lg border border-gray-300 focus:border-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-1 outline-none focus:outline-none"
+            className="p-2.5 w-full text-gray-900 bg-slate-200  rounded-lg border border-gray-300 focus:border-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2
+            outline-none focus:outline-none"
           >
             <option value="anime" selected>
               anime
@@ -78,6 +80,7 @@ const HomePage = () => {
             <option value="pixel-art">pixel-art</option>
             <option value="cinematic">cinematic</option>
           </select>
+
           <button
             className="bg-orange-400 px-10 py-3 rounded-sm"
             onClick={async () => {
